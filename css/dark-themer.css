@@ -1,0 +1,51 @@
+.dark-background {
+    background-color: hsla(0, 0%, 27%, 0.781);
+    transition: 0.2s;
+}
+
+.dark-title {
+    color: white;
+    transition: 0.2s;
+}
+
+.dark-button-title {
+    color: white;
+    transition: 0.2s;
+}
+
+.dark-td-th {
+    background-color: hsla(0, 0%, 27%, 0.781);
+    color: hsl(0, 0%, 83%);
+    transition: 0.2s;
+}
+
+.dark-td-th-invalid {
+    background-color: hsla(0, 100%, 74%, 0.781);
+    color: hsl(0, 0%, 83%);
+    transition: 0.2s;
+}
+
+.dark-input {
+    background: none;
+}
+
+.dark-grupo-title-input {
+    color: hsl(0, 0%, 83%);
+    transition: 0.2s;
+}
+
+.dark-field {
+    background: none;
+    color: white;
+    transition: 0.2s;
+}
+
+.dark-button {
+    background-color: hsl(234, 100%, 65%);
+    transition: 0.2s;
+}
+
+.dark-button:hover {
+    filter: brightness(0.9);
+    transition: 0.2s;
+}
