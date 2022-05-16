@@ -34,62 +34,19 @@ buttonDarkThemer.addEventListener('click', () => {
         list[i].classList.toggle('dark-td-th')
     }
 
-    // Validação no Themer Dark
+    // Adicionar table no dark themer
 
-    for (let i = 0; i < pacientes.length; i++) {
-        let paciente = pacientes[i]
-
-        let tdPeso = paciente.querySelector('.info-peso')
-        let peso = tdPeso.textContent
-
-        let tdAltura = paciente.querySelector('.info-altura')
-        let altura = tdAltura.textContent
-
-        let tdImc = paciente.querySelector('.info-imc')
-
-        let pesoEhValido = validaPeso(peso)
-        let alturaEhValida = validaAltura(altura)
-
-        if (!pesoEhValido) {
-            pesoEhValido = false
-            tdImc.textContent = 'Peso inválido'
-            paciente.classList.add('dark-td-th-invalid')
-        }
-
-        if (!alturaEhValida) {
-            alturaEhValida = false
-            tdImc.textContent = 'Altura inválida'
-            paciente.classList.add('dark-td-th-invalid')
-        }
-
-        if (alturaEhValida && pesoEhValido) {
-            let imc = calculaImc(peso, altura)
-            tdImc.textContent = imc
-        }
-    }
-
-    function validaPeso(peso) {
-        if (peso >= 0 && peso < 1000) {
-            return true
-        } else {
-            return false
-        }
-    }
-
-    function validaAltura(altura) {
-        if (altura >= 0 && altura <= 3.0) {
-            return true
-        } else {
-            return false
-        }
-    }
-
-    createTr(paciente)
+    createTr(pacientes)
 })
 
 function createTr(paciente) {
     let pacienteTr = document.createElement('tr')
-    pacienteTr.classList.add('dark-td-th')
+
+    if (buttonDarkThemer.checked === false) {
+        pacienteTr.classList.add('paciente')
+    } else {
+        pacienteTr.classList.add('dark-td-th')
+    }
 
     pacienteTr.appendChild(createTd(paciente.nome, 'info-nome'))
     pacienteTr.appendChild(createTd(paciente.peso, 'info-peso'))
